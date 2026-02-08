@@ -32,7 +32,7 @@ where $m(r)$ is the mass contained within radius $r$.
 
 \ut{d} Substitute the pressure using the relation found in (b) and demonstrate:
 
-$$-\frac{B\rho_0}{4\pi G}\frac{d\rho(r)}{dr}=\frac{\rho(r)^3}{r^2}\int_0^r r^2 \rho(r) dr$$
+$$-\frac{B\rho_0}{4\pi G}\frac{d\rho(r)}{dr}=\frac{\rho(r)^3}{r^2}\int_0^r x^2 \rho(x) dx$$
 
 Solving this differential equation is your challenge! For this problem, we will make a simplifying assumption to make the calculations easier. Suppose the density as a function of distance is:
 
@@ -90,15 +90,15 @@ $$\frac{dP(r)}{dr} = -\frac{G m(r) \rho(r)}{r^2}$$
 
 \ut{d} By definition:
 
-$$m(r) = 4 \pi \int_0^r r^2 \rho(r) dr$$
+$$m(r) = 4 \pi \int_0^r x^2 \rho(x) dx$$
 
 Substitute:
 
-$$\frac{B \rho_0}{\rho(r)^2} \frac{d\rho(r)}{dr} = -4 \pi G \frac{\rho(r)}{r^2} \int_0^r r^2 \rho(r) dr$$
+$$\frac{B \rho_0}{\rho(r)^2} \frac{d\rho(r)}{dr} = -4 \pi G \frac{\rho(r)}{r^2} \int_0^r x^2 \rho(x) dx$$
 
 Thus:
 
-$$-\frac{B \rho_0}{4\pi G} \frac{d \rho(r)}{dr} = \frac{\rho(r)^3}{r^2} \int_0^r r^2 \rho(r) dr$$
+$$-\frac{B \rho_0}{4\pi G} \frac{d \rho(r)}{dr} = \frac{\rho(r)^3}{r^2} \int_0^r x^2 \rho(x) dx$$
 
 \ut{e} Assume:
 
@@ -106,10 +106,8 @@ $$\rho(r) = a r^n$$
 
 Substituting into the previous equation:
 
-$$-\frac{B\rho_0}{4\pi G} a n r^{n-1} = \frac{a^3 r^{3n}}{r^2} \int_0^r r^2 (a r^n) dr$$
-$$-\frac{B\rho_0}{4\pi G} n r^{n-1} = a^3 r^{3n-2} \int_0^r r^{n+2} dr$$
+$$-\frac{B\rho_0}{4\pi G} a n r^{n-1} = \frac{a^3 r^{3n}}{r^2} \int_0^r x^2 (a x^n) dx$$
 $$-\frac{B\rho_0}{4\pi G} n r^{n-1} = \frac{a^3 r^{3n-2}}{n+3} r^{n+3}$$
-$$-\frac{B\rho_0}{4\pi G} n r^{n-1} = \frac{a^3 r^{4n+1}}{n+3}$$
 $$-\frac{B\rho_0}{4\pi G} n = \frac{a^3 r^{3n+2}}{n+3}$$
 
 Hence: $n = -\frac{2}{3}$
