@@ -1,0 +1,238 @@
+\documentclass[../main]{subfiles}
+
+\questiontrue
+\solutiontrue
+
+\begin{document}
+    \ifquestion
+    
+\section{Ballistics 2.0}
+
+Tired of conventional kinematics problems? Well, today might be your lucky day... or maybe not! Frustrated after losing a game of Donkey Kong, Ramanu Jan throws his PS5 controller into the air with an initial speed $v_0$ at an angle $\alpha$ with the horizontal. He needs to find the exact location where the controller will land so he can catch it. Fortunately, on his planet, with mass $M$ and radius $R$, there is no atmosphere.
+
+Hint: ignore the planet's rotation and remember Kepler's laws (Ramanu fears he might have thrown the controller at quite a high speed).
+
+\ut{a} Under these conditions, what is the maximum height reached by the controller? Use the necessary approximations to verify that for low speeds, the result matches the classical problem (when considering constant $\vec{g}$).
+
+\ut{b} What is the displacement of the controller (along the spherical surface) when it lands? Use the necessary approximations to verify that for low speeds, the result matches the classical problem (when considering constant $\vec{g}$).
+
+\clearpage
+
+\fi
+
+\ifsolution
+
+\section{Ballistics 2.0}
+
+Consider the following orbital scheme:
+
+\begin{figure}[htpb]
+  \centering
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,542); %set diagram left start at 0, and has height of 542
+
+%Shape: Circle [id:dp6572640317911433] 
+\draw   (233,295.67) .. controls (233,234.92) and (282.25,185.67) .. (343,185.67) .. controls (403.75,185.67) and (453,234.92) .. (453,295.67) .. controls (453,356.42) and (403.75,405.67) .. (343,405.67) .. controls (282.25,405.67) and (233,356.42) .. (233,295.67) -- cycle ;
+%Shape: Ellipse [id:dp8151455999033146] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}] (337.57,309.93) .. controls (304.98,267.93) and (332.91,191.71) .. (399.95,139.69) .. controls (466.99,87.68) and (547.75,79.55) .. (580.34,121.55) .. controls (612.93,163.55) and (585.01,239.77) .. (517.97,291.79) .. controls (450.93,343.81) and (370.16,351.93) .. (337.57,309.93) -- cycle ;
+%Straight Lines [id:da18064246706314013] 
+\draw    (355.17,186.01) -- (393.96,134.61) ;
+\draw [shift={(395.17,133.01)}, rotate = 127.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (7.65,-2.3) .. controls (4.86,-0.97) and (2.31,-0.21) .. (0,0) .. controls (2.31,0.21) and (4.86,0.98) .. (7.65,2.3)   ;
+\draw [shift={(355.17,186.01)}, rotate = 307.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 2.34, y radius= 2.34]   ;
+%Straight Lines [id:da0729187167294727] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (309.83,181.17) -- (400.88,190.86) ;
+%Shape: Arc [id:dp763399470412403] 
+\draw  [draw opacity=0] (368.18,168.06) .. controls (373.73,172.09) and (377.33,178.63) .. (377.33,186.01) .. controls (377.33,186.78) and (377.29,187.54) .. (377.22,188.29) -- (355.17,186.01) -- cycle ; \draw   (368.18,168.06) .. controls (373.73,172.09) and (377.33,178.63) .. (377.33,186.01) .. controls (377.33,186.78) and (377.29,187.54) .. (377.22,188.29) ;  
+%Shape: Square [id:dp41739190112295543] 
+\draw   (355.17,186.01) -- (363.17,186.95) -- (362.22,194.96) -- (354.22,194.01) -- cycle ;
+%Straight Lines [id:da5746011244612215] 
+\draw    (355.17,186.01) -- (343,295.67) ;
+\draw [shift={(343,295.67)}, rotate = 96.33] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da80303930192495] 
+\draw    (580.34,121.55) -- (432.5,231.42) ;
+\draw [shift={(432.5,231.42)}, rotate = 143.38] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+\draw [shift={(580.34,121.55)}, rotate = 143.38] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+
+% Text Node
+\draw (342,167.41) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize]  {$L$};
+% Text Node
+\draw (364,124.74) node [anchor=north west][inner sep=0.75pt]    {$\vec{v}_{0}$};
+% Text Node
+\draw (378.57,164.99) node [anchor=north west][inner sep=0.75pt]    {$\theta $};
+% Text Node
+\draw (352,238.07) node [anchor=north west][inner sep=0.75pt]  [font=\Large]  {$R$};
+% Text Node
+\draw (485,191.07) node [anchor=north west][inner sep=0.75pt]  [font=\Large]  {$H$};
+% Text Node
+\draw (586,107.57) node [anchor=north west][inner sep=0.75pt]    {$G$};
+% Text Node
+\draw (342.5,294.57) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize]  {$O$};
+
+
+\end{tikzpicture}
+	    \caption{Trajectory of Ramanu Jan's controller}
+	    \label{fig:trajectory}
+	\end{figure}
+	
+\ut{a} In order to find $H$, notice that we only need to determine the apogee: $a(1+e)$ and subtract the planet's radius $R$ from it. We can find the semi-major axis of this orbit using the velocity relation:
+
+$$v_0^2 = GM\left(\frac{2}{R} - \frac{1}{a}\right)$$  
+$$\therefore a = \frac{GMR}{2GM - v_0^2R}$$ 
+
+To find the eccentricity $e$, we will use the conservation of angular momentum:
+
+$$v_0R\sin{(\theta + 90^\circ)} = v_p r_p$$
+
+Where $v_p$ and $r_p$ are the velocity and distance at perihelion, respectively. We know that $v_p = \sqrt{GM\left(\frac{2}{a(1 - e)} - \frac{1}{a}\right)}$ and $r_p = a(1 - e)$. Note that $\sin{(\theta + 90^\circ)} = \cos{(\theta)}$, therefore:  
+
+$$v_0R\cos{(\theta)} = \sqrt{GMa(1 - e^2)}$$  
+
+Thus:  
+
+$$e = \sqrt{1 - \frac{v_0^2R^2\cos^2{(\theta)}}{GMa}}$$  
+$$\therefore e = \sqrt{1 - \frac{v_0^2R\cos^2{(\theta)}}{G^2M^2}(2GM - v_0^2R)}$$  
+
+Finally:  
+
+$$H = a(1 + e) - R = \frac{GMR}{2GM - v_0^2R}\left(\frac{v_0^2R}{GM} + \sqrt{1 - \frac{v_0^2R\cos^2{(\theta)}}{G^2M^2}(2GM - v_0^2R)} - 1\right)$$  
+
+In the case where $v_0^2 \ll \dfrac{2GM}{R}$, we use the approximation $\sqrt{1 + x} \approx 1 + \dfrac{x}{2}$:  
+
+$$H = \frac{GMR}{2GM}\left(\frac{v_0^2R}{GM} + 1 - \frac{v_0^2R\cos^2{(\theta)}}{2G^2M^2}(2GM) - 1\right)$$  
+$$H = \frac{R}{2}\left(\frac{v_0^2R}{GM} - \frac{v_0^2R}{GM}\cos^2{(\theta)}\right)$$  
+
+It is known that $1 - \cos^2{x} = \sin^2{x}$, therefore:  
+
+$$H = \frac{R^2v_0^2}{2GM}\sin^2{(\theta)}$$  
+
+Knowing that the gravitational acceleration on Earth's surface is $g = \dfrac{GM}{R^2}$, we conclude:  
+
+$$H = \frac{v_0^2\sin^2{(\theta)}}{2g}$$  
+
+Which is the classical result!
+
+\ut{b} We can calculate the angular displacement by the angle swept by the position vector during the trajectory. Thus, the satellite reaches the ground when $r = R$:  
+
+$$R = \frac{a(1 - e^2)}{1 + e\cos{(\phi)}}$$  
+$$\phi = \arccos{\left(\frac{a(1 - e^2) - R}{Re}\right)}$$  
+
+The angular displacement is $2\pi - 2\phi$ (remember that $\phi$ is the angle of the position vector at perihelion). Therefore, the displacement over the planet is:  
+
+$$\Delta L = 2R\left(\pi - \arccos{\left(\frac{a(1 - e^2) - R}{Re}\right)}\right)$$  
+
+In the case where $v_0^2 \ll \dfrac{2GM}{R}$:  
+
+$$a = \frac{GMR}{2GM - v_0^2R} \approx \frac{R}{2}$$  
+
+and  
+
+$$e = \sqrt{1 - \frac{v_0^2R^2\cos^2{(\theta)}}{GMa}}$$  
+
+In this case, we will use another approximation: the $\Delta L$ is practically equal to the linear displacement between the two points (launch point and landing point), as shown in \autoref{fig:bolsonaro22}.
+
+\begin{figure}[htpb]
+	    \centering
+	    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,542); %set diagram left start at 0, and has height of 542
+
+%Shape: Circle [id:dp6572640317911433] 
+\draw   (233,295.67) .. controls (233,234.92) and (282.25,185.67) .. (343,185.67) .. controls (403.75,185.67) and (453,234.92) .. (453,295.67) .. controls (453,356.42) and (403.75,405.67) .. (343,405.67) .. controls (282.25,405.67) and (233,356.42) .. (233,295.67) -- cycle ;
+%Shape: Ellipse [id:dp8151455999033146] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}] (337.57,309.93) .. controls (304.98,267.93) and (332.91,191.71) .. (399.95,139.69) .. controls (466.99,87.68) and (547.75,79.55) .. (580.34,121.55) .. controls (612.93,163.55) and (585.01,239.77) .. (517.97,291.79) .. controls (450.93,343.81) and (370.16,351.93) .. (337.57,309.93) -- cycle ;
+%Straight Lines [id:da18064246706314013] 
+\draw    (355.17,186.01) -- (393.96,134.61) ;
+\draw [shift={(395.17,133.01)}, rotate = 127.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (7.65,-2.3) .. controls (4.86,-0.97) and (2.31,-0.21) .. (0,0) .. controls (2.31,0.21) and (4.86,0.98) .. (7.65,2.3)   ;
+\draw [shift={(355.17,186.01)}, rotate = 307.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 2.34, y radius= 2.34]   ;
+%Straight Lines [id:da0729187167294727] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (309.83,181.17) -- (400.88,190.86) ;
+%Shape: Arc [id:dp763399470412403] 
+\draw  [draw opacity=0] (368.18,168.06) .. controls (373.73,172.09) and (377.33,178.63) .. (377.33,186.01) .. controls (377.33,186.78) and (377.29,187.54) .. (377.22,188.29) -- (355.17,186.01) -- cycle ; \draw   (368.18,168.06) .. controls (373.73,172.09) and (377.33,178.63) .. (377.33,186.01) .. controls (377.33,186.78) and (377.29,187.54) .. (377.22,188.29) ;  
+%Shape: Square [id:dp41739190112295543] 
+\draw   (355.17,186.01) -- (363.17,186.95) -- (362.22,194.96) -- (354.22,194.01) -- cycle ;
+%Straight Lines [id:da5746011244612215] 
+\draw    (355.17,186.01) -- (343,295.67) ;
+\draw [shift={(343,295.67)}, rotate = 96.33] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+%Straight Lines [id:da80303930192495] 
+\draw    (580.34,121.55) -- (432.5,231.42) ;
+\draw [shift={(432.5,231.42)}, rotate = 143.38] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+\draw [shift={(580.34,121.55)}, rotate = 143.38] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+%Straight Lines [id:da3611302884328518] 
+\draw    (343,295.67) -- (447.67,329.34) ;
+\draw [shift={(447.67,329.34)}, rotate = 17.83] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 2.34, y radius= 2.34]   ;
+%Straight Lines [id:da6984793858800231] 
+\draw [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ]   (355.35,186.01) -- (447.67,329.34) ;
+
+% Text Node
+\draw (342,167.41) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize]  {$L$};
+% Text Node
+\draw (364,124.74) node [anchor=north west][inner sep=0.75pt]    {$\vec{v}_{0}$};
+% Text Node
+\draw (378.57,164.99) node [anchor=north west][inner sep=0.75pt]    {$\theta $};
+% Text Node
+\draw (327.33,242.74) node [anchor=north west][inner sep=0.75pt]  [font=\Large]  {$R$};
+% Text Node
+\draw (485,191.07) node [anchor=north west][inner sep=0.75pt]  [font=\Large]  {$H$};
+% Text Node
+\draw (586,107.57) node [anchor=north west][inner sep=0.75pt]    {$G$};
+% Text Node
+\draw (346.5,279.24) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize]  {$O$};
+% Text Node
+\draw (376,307.41) node [anchor=north west][inner sep=0.75pt]  [font=\Large]  {$R$};
+% Text Node
+\draw (399.33,239.08) node [anchor=north west][inner sep=0.75pt]    {$\Delta L$};
+
+
+\end{tikzpicture}
+	    \caption{Final displacement of the controller trajectory}
+	    \label{fig:bolsonaro22}
+	\end{figure}
+
+
+$$\Delta L = 2R\sin{(\pi - \phi)} = 2R\sqrt{1 - \cos^2{\phi}}$$  
+$$\cos{\phi} = \frac{a(1 - e^2) - R}{Re}$$  
+
+Substituting the expressions:  
+
+$$\cos{\phi} = \frac{v^2R\cos^2{\theta}}{GMe} - \frac{1}{e}$$  
+$$1 - \cos^2{\phi} = 1 - \frac{v^4R^2\cos^4{\theta}}{G^2M^2e^2} + \frac{2v^2R\cos^2{\theta}}{GMe^2} - \frac{1}{e^2}$$  
+
+Rearranging a bit, we arrive at the following expression:  
+
+$$1 - \cos^2{\phi} = \frac{R^2v^2\cos^2{\theta}}{G^2M^2e^2}\left(\frac{2GM}{R} - \frac{GM}{a} - v^2\cos^2{\theta}\right)$$  
+
+We see that the previous expression is the mechanical energy of the body (remember again that $\cos^2{\theta} + \sin^2{\theta} = 1$):  
+
+$$\frac{m}{2}\left(v^2\cos^2{\theta} + v^2\sin^2{\theta}\right) - \frac{GMm}{R} = -\frac{GMm}{2a}$$  
+
+Multiplying everything by $\dfrac{2}{m}$:  
+
+$$v^2\cos^2{\theta} + v^2\sin^2{\theta} - \frac{2GM}{R} = -\frac{GM}{a}$$  
+
+Thus:  
+
+$$\frac{2GM}{R} - \frac{GM}{a} - v^2\cos^2{\theta} = v^2\sin^2{\theta}$$  
+
+Substituting:  
+
+$$1 - \cos^2{\phi} = \frac{R^2v^4\cos^2{\theta}\sin^2{\theta}}{G^2M^2e^2}$$  
+$$\Delta L = 2R^2\frac{v^2\cos{\theta}\sin{\theta}}{GMe}$$  
+
+Approximating $e$ to 1 (just observe the expression and notice that $e$ tends to 1), knowing that the surface gravity $g = \dfrac{GM}{R^2}$ and that $\sin{(2\theta)} = 2\cos{\theta}\sin{\theta}$:  
+
+$$\Delta L = \frac{v^2\sin{(2\theta)}}{g}$$  
+
+Which is the classical result!
+
+	\clearpage
+    
+    
+    \fi
+\end{document}

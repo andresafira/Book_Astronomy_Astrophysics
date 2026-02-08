@@ -1,0 +1,188 @@
+\documentclass[../main]{subfiles}
+
+\questiontrue
+\solutiontrue
+
+\begin{document}
+    \ifquestion
+    
+    
+    \section{Stelar Photometry}
+		
+    Nill das Graças was an enthusiast of astronomical observation. One night, he was enthusiastically observing the binary system composed of Mizar and Alcor. After a few minutes of observation, something unexpected happened: the total magnitude of the system increased by \(\Delta m_{sis} = 0.1\). After some time studying the event to determine what had occurred, Nill discovered the reason for this change: a dust cloud passed near the system, and Alcor absorbed part of its matter, forming an additional layer over the star's photosphere
+		
+		Dados:
+		
+		\begin{itemize}
+			\item Alcor's apparent magnitude: $3.9$
+			\item Mizar's apparent magnitude: $2.2$ 	
+			\item Alcor's photosphere temperature: $T_0 = 8200 K$
+			\item Alcor's Mass:  $1.84 M_\odot$
+			\item Alcor's radius: $1.85 R_\odot$
+			\item $\mu=1.67\cdot10^{-27} kg$
+		\end{itemize}
+		
+		
+		\ut{a} Determine Alcor's apparent magnitude variation, $\Delta m_{A}$, exclusively.	
+		
+		\ut{b} Given that $\rho(r)$ is the matter density at a distance $r$ from the center of the star and that $m(r)$ is the mass contained in a sphere of radius $r$ concentric with the star, prove the hydrostatic equilibrium equation:
+
+            \[\frac{dP(r)}{dr}=-\frac{Gm(r)}{r^2}\rho(r)\]
+
+		Consider that the most important process that mantains the equilibrium at the surface of the star is the radiation pressure, represented by the following equation:
+		
+		$$P=\frac{4\sigma}{3c}T^4$$
+		
+		\ut{c} Assumindo a estrela composta de um gás ideal com partículas de massa $\mu$, encontre uma relação para a variação de temperatura $\Delta T$ entre a fotosfera e camada exterior de matéria que garante o equilíbrio. Não assuma nenhuma relação entre a pressão de radiação e de gás ideal. Assuma que a espessura $\Delta r << R$, sendo $R$ o raio de Alcor. Se necessário utilize que $\dfrac{dy^n}{dx}=ny^{n-1}\dfrac{dy}{dx}$.
+			
+		\ut{d} Assumindo que $|\Delta T| << T_0$, encontre a espessura dessa camada de matéria. Se necessário utilize que, para $|x|<<1$: $\ln{(1+x)}\approx x$.
+		
+		\ut{e} Algum tempo após a acreção de matéria a camada adicional de gás começou a se comportar como uma atmosfera estelar bem definida. Sabendo que a fotosfera de uma estrela é definida como a região com profundidade óptica $\tau = \dfrac{2}{3}$ vista de fora da estrela, encontre a opacidade $\kappa$ da atmosfera. Considere que a densidade na superfície da estrela é da ordem de 10 vezes menos densa que a densidade média da estrela.
+        
+        \ut{c} Assuming the star is composed of an ideal gas with particles of mass \(\mu\), find a relationship for the temperature variation \(\Delta T\) between the photosphere and the outer layer of matter that ensures equilibrium. Do not assume any relation between radiation pressure and ideal gas pressure. Assume that the thickness \(\Delta r\) is much smaller than \(R\), where \(R\) is Alcor’s radius. If necessary, use the derivative property:  
+\[
+\frac{d y^n}{dx} = n y^{n-1} \frac{dy}{dx}
+\]
+
+\ut{d} Assuming that \(|\Delta T| \ll T_0\), determine the thickness of this layer of matter. If necessary, use the approximation:  
+\[
+\ln(1 + x) \approx x, \quad \text{for } |x| \ll 1.
+\]
+
+\ut{e} Some time after the accretion of matter, the additional gas layer started behaving like a well-defined stellar atmosphere. Knowing that the photosphere of a star is defined as the region with an optical depth \(\tau = \frac{2}{3}\) when viewed from outside the star, determine the opacity \(\kappa\) of the atmosphere. Consider that the density at the surface of the star is approximately ten times less than the average density of the star.
+	\clearpage
+    
+    \fi
+    
+    \ifsolution
+    
+    \section{Stelar Photometry}
+	
+	\ut{a} Writing Poyson's equation for a individual star:
+    \[m_i=-2.5\log{\frac{F_i}{F_v}}\]
+	
+    \[F_i=F_v 10^{-\frac{m_i}{2.5}}\]
+	
+	The system's radiation flux is the sum of the radiation of the components:
+	
+	
+    \[M=-2.5\log{\left(\frac{F_v\sum 10^{-\frac{m_i}{2.5}}}{F_v}\right)}\]
+    \[\therefore M=-2.5\log{\left(10^{\frac{(2.2)}{-2.5}}+10^{\frac{(3.9)}{-2.5}}\right)} \approxeq 2.0\]
+	
+	But it is known that:
+	
+    \[M+\Delta m_{sis} = 2.1=-2.5\log{\left(10^{\frac{(2.2)}{-2.5}}+10^{\frac{(3.9+\Delta m _A)}{-2.5}} \right) }\]
+	
+	Which leads to:
+	
+    \[\boxed{\Delta m_A=0.84}\]
+	
+	\ut{b} Consider a cylindrical element of mass $dm$ at a distance $r$ from the center of the star, with cross section area $dA$ and length $dr$. The pressure at the base of the element is $P(r)$ and at the top is $P(r+dr)$. The pressure difference generates a net outward force that compensates for the gravitational attraction: $\dfrac{Gm(r)dm}{r^2}$.
+	
+	Which means that:
+	
+    \[(P(r)-P(r+dr))dA=-\frac{Gm(r)dm}{r^2}\]
+	
+	Notice that $\rho(r)=\dfrac{dm}{dAdr}$ and that $P(r+dr)-P(r)=dP(r)$, which leads to:
+	
+	\begin{equation}
+		\boxed{\frac{dP(r)}{dr}=-\frac{Gm(r)}{r^2}\rho(r)}
+		\label{a}
+	\end{equation}
+	
+	\ut{c} Now considering the general case in which the relation between the radiation and ideal gas pressure is unknown, we have that:
+	
+    \[P_{rad}(r) = \frac{4 \sigma}{3c}T^4(r)\]
+	
+    \[P_{gas}(r) = \frac{\rho(r)}{\mu}k_bT(r)\]
+	
+    \[\frac{dP_{tot}(r)}{dr}=-\frac{Gm(r)}{r^2}\rho(r)\]
+	
+	Since $P_{tot} = P_{rad} + P_{gas}$, then:
+	
+    \[\frac{16\sigma}{3c}T^3(r)\frac{dT(r)}{dr}+\frac{k_b}{\mu}T(r)\frac{d\rho(r)}{dr}+\frac{k_b}{\mu}\rho(r)\frac{dT(r)}{dr}=-\frac{Gm(r)}{r^2}\rho(r)\]
+	
+	Applying the relation above to the photosphere, where $r=R$, $m(R)= M$ and, by approximation, $dr = \Delta r$ where $\Delta r$ is the thickness of the atmosphere, $dT(R) = \Delta T$ and $d\rho(r) = - \rho(R)$ (since the density drops from $\rho(R)$, the density inside the photosphere, to $0$, outside the atmosphere):
+	
+    \[\frac{16\sigma}{3c}T^3_0\frac{\Delta T}{\Delta r}-\frac{k_b}{\mu}T_0\frac{\rho(R)}{\Delta r}+\frac{k_b}{\mu}\rho(R)\frac{\Delta T}{\Delta r}=-\frac{GM}{R^2}\rho(R)\]
+	
+	Notice that since $|\Delta T| \ll T_0$:
+	
+    \[\bigg| \frac{k_b}{\mu}\Delta T\frac{\rho(R)}{\Delta r} \bigg| \ll \frac{k_b}{\mu}T_0\frac{\rho(R)}{\Delta r}\]
+	
+	Therefore it is possible to ignore the first term in relation to the second:
+	
+    \[\frac{16\sigma}{3c}T^3_0\frac{\Delta T}{\Delta r}-\frac{k_b}{\mu}T_0\frac{\rho(R)}{\Delta r}=-\frac{GM}{R^2}\rho(R)\]
+	
+	Isolating $\Delta T$:
+	
+    \[\Delta T = \frac{3\rho(R)c}{16 \sigma T_0^3}\left(\frac{k_b}{\mu}T_0-\frac{GM\Delta r}{R^2}\right)\]
+	
+	\ut{d} It is known that the radiation flux if dependent of the fourth power of the outside temperature: $F \propto T^4$. Now using the Pogson relation for the magnitudes:
+	
+    \[m-m_0=-2.5\log{\left( \frac{F}{F_0}\right) }=-2.5\log{\left( \frac{T^4}{T_0^4}\right) }\]
+	
+    \[\Delta m_A = -10\log{\left(\frac{T_0+\Delta T}{T_0}\right) }=-\frac{10}{\ln{(10)}}\ln{\left(1+\frac{\Delta T}{T_0} \right) }\]
+	
+    \[\Delta r = \frac{R^2T_0}{GM} \left( \frac{k_b}{\mu}+\frac{8 \sigma T_0^3 \ln (10)}{15 \rho(R) c}\right)\]
+	
+	Now pay attention to the order of magnitude of the terms:
+	
+    \[\frac{k_b}{\mu} \approx 8.3 \cdot 10^3 [S.I.]\]
+	
+	Now, in order to determine the order of magnitude of the second term, we have to find an approximation to the density. Consider the density being the average density of the star:
+	
+    \[\rho(R) \approx \bar{\rho} = \frac{3M}{4\pi R^3}\]
+	
+	So the second term would be equal to:
+	
+    \[\frac{32 \pi \sigma T_0^3 \ln (10) R^3}{45Mc}\]
+	
+    \[\frac{32 \pi \sigma T_0^3 \ln (10) R^3}{45Mc} \approx 3.12 \cdot 10^{-7} [S.I.]\]
+	
+	Notice that this approach overestimates the value of the density of the atmosphere, which would make this term bigger. But even if the photosphere was a billion times less dense then the average density of the star, which is unlikely, the term would be less then 4\% of the first term, so it is safe to ignore it:
+	
+    \[ \frac{k_b}{\mu}+\frac{8 \sigma T_0^3 \ln (10)}{15 \rho(R) c} \approx \frac{k_b}{\mu}\]
+	
+	Which leads to:
+	
+    \[\boxed{\Delta r = \frac{R^2T_0k_b}{GM\mu}}\]
+	
+	Substituting the values we get that:
+	
+    \[\boxed{\Delta r \approx \SI{460}{\kilo \meter}}\]
+	
+	\ut{e} Utilizing the hydrostatic equilibrium equation in the photosphere, we have that:
+	
+    \[\frac{dP(R)}{dr}\approx \frac{\Delta P}{\Delta r}=-\frac{GM}{R^2}\rho\]
+	
+	By the definition of optical depth:
+	
+    \[\tau=\frac{2}{3}=\kappa \rho \Delta r\]
+	
+    \[\therefore \Delta P = - \frac{GM}{R^2} \rho \Delta r = \Delta P = -\frac{2GM}{3\kappa R^2}\]
+	
+    Since $\Delta P = P_{ext}-P_{fot}$ and the outside pressure is $P_{ext}=0$: $P_{fot}=\dfrac{2GM}{3\kappa R^2}$. Comparing this with the expression of the total pressure at the photosphere (gas + radiation) we find that:
+	
+    \[\frac{2GM}{3\kappa R^2}=\frac{4\sigma}{3c}T_0^4+ \frac{\rho(R)}{\mu}k_bT_0\]
+	
+	Comparing the orders of magnitude of the term in the right:
+	
+    \[\frac{4\sigma}{3c}T_0^4+ \frac{\rho(R)}{\mu}k_bT_0 \approx \frac{\rho(R)}{\mu}k_bT_0\]
+	
+	Now, considering as stated by the problem statement\footnote{$\alpha = 10$.}:
+	
+    \[\rho(R) = \alpha \frac{3M}{4 \pi R^3}\]
+	
+    \[\therefore \kappa = \frac{8\pi GR \mu}{9\alpha k_b T_0}\]
+	
+	Substituting the values we have that:
+	
+    \[\kappa = \SI{86}{\meter \squared \per \kilo \gram}\]
+	
+	
+	\clearpage
+    
+    
+    \fi
+\end{document}

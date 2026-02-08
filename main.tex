@@ -1,0 +1,152 @@
+\documentclass[12pt]{book}
+\usepackage{fontspec}
+\usepackage{tikz}
+\usepackage{subfiles}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{pgfplots}
+\usepackage[labelsep = colon, textformat = period, font=footnotesize]{caption}
+\captionsetup[table]{position=top}
+\pgfplotsset{compat = 1.18}
+\usepgfplotslibrary{external}
+\usepackage[style=abnt,pretty]{biblatex}
+\usepackage[margin=2cm]{geometry} 
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{icomma}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage[autostyle, english = american]{csquotes}
+\usepackage[Rejne]{fncychap}
+\usepackage[most]{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newif \ifquestion
+\questiontrue
+\newif \ifsolution
+\solutionfalse
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\MakeOuterQuote{"}
+\usepackage{lmodern}
+\usepackage{amssymb}
+\usepackage{indentfirst}
+\usepackage{setspace}
+\usepackage{mhchem}
+\usepackage{siunitx}
+\DeclareSIUnit \parsec {pc}
+\usepackage{currfile}
+\usepackage{xr}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\usepackage{lmodern}
+\usepackage{pdfpages}
+\newcommand{\ut}[1]{
+	\begin{doublespace}
+		
+	\end{doublespace}
+	\textbf{#1)}}
+
+\newcommand{\fig}[2]{
+	\begin{figure}[htb]
+		\centering
+		\includegraphics[scale=#1]{images/#2}
+	\end{figure}
+}
+\newcommand{\parte}[2]{
+	\begin{doublespace}
+		
+		
+		\begin{large}
+			\textbf{Part #1: #2}
+		\end{large}
+		
+	\end{doublespace}
+	
+}
+\newcommand{\lab}[1]{(\ref{#1})}
+
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=magenta,      
+	urlcolor=cyan,
+}
+
+
+\titleformat{\section}
+{\Large\bfseries\centering\fontfamily{ppl}}
+{\thesection}
+{0.5em}
+{}[\titlerule]
+\titleformat{\subsection}
+{\Large\bfseries\fontfamily{ppl}\selectfont}
+{\thesubsection}
+{0.5em}
+{}[\titlerule]
+\titleformat{\subsubsection}
+{\bfseries\itshape\fontfamily{ppl}\selectfont}
+{\textendash}
+{0.5em}
+{}
+
+
+\setlength{\footskip}{35pt}
+\fancypagestyle{pag}{
+	\fancyfoot[L]{\href{https://www.youtube.com/watch?v=hDNyhBiD30s}{\includegraphics[height=30px]{images/logo.png}}}
+	\fancyfoot[R]{\thepage}
+}
+\renewcommand\headrulewidth{0pt}
+\fancyhf{}
+\pagestyle{pag}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+	
+	\includepdf[pages=1,fitpaper]{images/cover}
+	\clearpage
+	\thispagestyle{empty}
+	\tableofcontents
+	
+	\begin{center}
+		\begin{large}
+			\chapter{PROBLEMS}
+		\end{large}
+	\end{center}
+	
+	\clearpage
+	
+	\foreach \x in {1, 2, 3, ..., 29}{
+	  \subfile{problems/P\x}
+	}
+
+  \solutiontrue
+  \questionfalse
+  \begin{center}
+    \begin{large}
+      \chapter{SOLUTIONS}
+    \end{large}
+  \end{center}
+
+  \clearpage
+
+	\foreach \x in {1, 2, 3, ..., 29}{
+    \subfile{problems/P\x}
+	}
+	
+\end{document}

@@ -1,0 +1,182 @@
+\documentclass[../main]{subfiles}
+
+\questiontrue
+\solutiontrue
+
+\begin{document}
+    \ifquestion
+    
+    \section{Bulk Star}
+
+In this problem, we will develop a stellar model based on the formation of a star from a spherical nebula composed of a certain fluid (not necessarily a gas).
+
+Consider a homogeneous and isotropic spherical nebula with initial radius $R_0$ and initial density $\rho_0$. Imagine that at this moment there are practically no interactions between the fluid particles. This fluid is compressible and has a Bulk modulus equal to $B$. From this scenario, we want to determine the parameters of the "star" formed after the particles reach hydrostatic equilibrium.
+
+Recall the definition of the Bulk modulus:
+
+$$B=-\frac{\Delta P}{\frac{\Delta V}{V}}$$
+
+Here, $\Delta P$ is the change in pressure in the fluid caused by the relative change in its volume $\dfrac{\Delta V}{V}$.
+
+\ut{a} If the final radius of the star is much smaller than the initial radius of the cloud and considering that gravitational interaction between particles is dominant throughout the motion (neglecting opposing pressure), find the formation time of the star as a function of the given parameters.
+
+\ut{b} Consider a range of radii $r_0$ to $r_0+dr_0$ in the initial cloud. The mass contained in this interval will move to the corresponding interval $r$ to $r+dr$ in the final star. Show that the pressure in the final star is:
+
+$$P(r)=B\left(1-\frac{\rho_0}{\rho(r)}\right)$$
+
+\ut{c} Find the pressure gradient required to "support" the star in hydrostatic equilibrium. Show that:
+
+$$\frac{dP(r)}{dr}=-\frac{G m(r)\rho(r)}{r^2}$$
+
+where $m(r)$ is the mass contained within radius $r$.
+
+\ut{d} Substitute the pressure using the relation found in (b) and demonstrate:
+
+$$-\frac{B\rho_0}{4\pi G}\frac{d\rho(r)}{dr}=\frac{\rho(r)^3}{r^2}\int_0^r r^2 \rho(r) dr$$
+
+Solving this differential equation is your challenge! For this problem, we will make a simplifying assumption to make the calculations easier. Suppose the density as a function of distance is:
+
+$$\rho(r)=ar^n$$
+
+\ut{e} Find $a$ and $n$.
+
+\ut{f} Find the pressure function as a function of distance from the center of the star.
+
+\ut{g} Conclude: what should be the maximum radius of a star under these conditions?
+
+\ut{h} Assuming the fluid that makes up the star has particle mass $\mu$ and behaves like an ideal gas, find its temperature profile.
+
+\ut{i} What is the Mass-Radius relation for stars in this model?
+
+\ut{j} Assuming stars in this model have radii much smaller than the limiting radius, find their Mass-Luminosity relation.
+
+\clearpage
+
+\fi
+
+\ifsolution
+
+\section{Bulk Star}
+
+\ut{a} We can consider the outermost part of the star (at a distance $R_0$ from the center) which will practically reach the center of the star (since the final radius can be considered negligible). Using the degenerate ellipse technique and Kepler's law for orbital period:
+
+$$T^2=\frac{4\pi^2 a^3}{GM}$$
+
+The free-fall time is half a period (since it does not return to $R_0$) and $2a = R_0$:
+
+$$(2\Delta t)^2=\frac{\pi^2 R_0^3}{2GM}$$
+$$\Delta t^2=\frac{\pi^2 R_0^3}{8G\left(\frac{4\pi}{3}R_0^3\rho_0\right)}$$
+$$\Delta t=\sqrt{\frac{3\pi}{32 G \rho_0}}$$
+
+\ut{b} Consider a fixed mass element $dm$:
+
+$$dm=4\pi r^2 dr \rho(r) = 4 \pi r_0^2 dr_0 \rho_0$$
+
+$$B=\frac{\Delta P}{\Delta V} V$$
+
+$$\Delta V = 4 \pi r_0^2 dr_0 \left(1-\frac{\rho_0}{\rho(r)}\right)$$
+
+Since $V = 4\pi r_0^2 dr_0$:
+
+$$P(r) = B\left(1-\frac{\rho_0}{\rho(r)}\right)$$
+
+\ut{c} Consider a cylindrical element of mass $dm$ at a distance $r$ from the center with base area $dA$ and height $dr$. The pressure at the lower base is $P(r)$ and at the upper base is $P(r+dr)$. The pressure difference generates a force balancing the gravitational attraction on this element, $\dfrac{G m(r) dm}{r^2}$:
+
+$$(P(r)-P(r+dr)) dA = -\frac{G m(r) dm}{r^2}$$
+
+Note that $\rho(r) = \dfrac{dm}{dA dr}$ and $P(r+dr)-P(r) = dP(r)$, so rearranging:
+
+$$\frac{dP(r)}{dr} = -\frac{G m(r) \rho(r)}{r^2}$$
+
+\ut{d} By definition:
+
+$$m(r) = 4 \pi \int_0^r r^2 \rho(r) dr$$
+
+Substitute:
+
+$$\frac{B \rho_0}{\rho(r)^2} \frac{d\rho(r)}{dr} = -4 \pi G \frac{\rho(r)}{r^2} \int_0^r r^2 \rho(r) dr$$
+
+Thus:
+
+$$-\frac{B \rho_0}{4\pi G} \frac{d \rho(r)}{dr} = \frac{\rho(r)^3}{r^2} \int_0^r r^2 \rho(r) dr$$
+
+\ut{e} Assume:
+
+$$\rho(r) = a r^n$$
+
+Substituting into the previous equation:
+
+$$-\frac{B\rho_0}{4\pi G} a n r^{n-1} = \frac{a^3 r^{3n}}{r^2} \int_0^r r^2 (a r^n) dr$$
+$$-\frac{B\rho_0}{4\pi G} n r^{n-1} = a^3 r^{3n-2} \int_0^r r^{n+2} dr$$
+$$-\frac{B\rho_0}{4\pi G} n r^{n-1} = \frac{a^3 r^{3n-2}}{n+3} r^{n+3}$$
+$$-\frac{B\rho_0}{4\pi G} n r^{n-1} = \frac{a^3 r^{4n+1}}{n+3}$$
+$$-\frac{B\rho_0}{4\pi G} n = \frac{a^3 r^{3n+2}}{n+3}$$
+
+Hence: $n = -\frac{2}{3}$
+
+Then:
+
+$$a = \sqrt[3]{\frac{B \rho_0}{2\pi G} \frac{7}{9}}$$
+
+Thus:
+
+$$\rho(r) = \sqrt[3]{\frac{7 B \rho_0}{18 \pi G r^2}}$$
+
+\ut{f} Substituting into (b):
+
+$$P(r) = B \left( 1 - \sqrt[3]{\frac{18 \pi G r^2 \rho_0^2}{7 B}} \right)$$
+
+\ut{g} For the star to exist, pressure must remain positive:
+
+$$r < \sqrt{\frac{7 B}{18 \pi G \rho_0^2}}$$
+
+\ut{h} Applying the Ideal Gas Law:
+
+$$P(r) V = N k T(r)$$
+
+For particle mass $\mu$:
+
+$$P(r) = \frac{N}{V} k T(r)$$
+$$P(r) = \frac{\rho(r)}{\mu} k T(r)$$
+
+Hence:
+
+$$T(r) = \left(1 - \sqrt[3]{\frac{18 \pi G r^2 \rho_0^2}{7 B}}\right) \sqrt[3]{\frac{18 \pi G r^2 B^2}{7 \rho_0}} \frac{\mu}{k}$$
+
+\ut{i} Note that:
+
+$$M = 4 \pi \int_0^R r^2 \rho(r) dr$$
+
+Then:
+
+$$M = 4 \pi \int_0^R \sqrt[3]{\frac{7 B \rho_0}{18 \pi G}} r^{4/3} dr$$
+$$M = \sqrt[3]{\frac{96 \pi^2 B \rho_0}{49 G}} R^{7/3}$$
+
+The mass-radius relation is therefore $M \propto R^{7/3}$.
+
+\ut{j} For stars with radius much smaller than the limiting radius, we can approximate the temperature:
+
+$$T(r) = \sqrt[3]{\frac{18 \pi G r^2 B^2}{7 \rho_0}} \frac{\mu}{k}$$
+
+Using:
+
+$$L = 4 \pi R^2 \sigma T(R)^4$$
+
+We get:
+
+$$L = 4 \pi R^2 \left(\frac{18 \pi G B^2}{7 \rho_0}\right)^{4/3} \frac{\mu^4}{k^4} R^{8/3}$$
+
+Hence:
+
+$$L \propto R^{14/3}$$
+
+Relating this to the Mass-Radius relation, we find:
+
+$$L \propto M^2$$
+
+Remarkably, this result is similar to the actual Mass-Luminosity relation observed for some stars in the universe.
+	\clearpage
+    
+    
+    \fi
+\end{document}

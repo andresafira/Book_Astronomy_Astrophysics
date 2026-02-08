@@ -1,0 +1,174 @@
+\documentclass[../main]{subfiles}
+
+\questiontrue
+\solutiontrue
+
+\begin{document}
+    \ifquestion
+    
+    \section{The Mass of the Curve}
+
+João Kleper, a world champion bowler known for his perfectly precise throws, was in his match competing against the Russians. On his last throw, he noticed that the ball was deflected to the right. This was not enough to cost him the victory in the competition, but it left him very curious as to why he had failed. In his quest for the truth, he analyzed the recording of the match and noticed that his ball had been deflected by approximately 1 degree. He also realized that the cause of the deflection was an irregularity in the lane. After a deep analysis, he realized that the curvature of the lane caused an effect similar to that of a properly positioned gravitational field (at least under the conditions of his throw). Thus, Kleper wants to find the mass that would cause this same effect, that is, the "mass of the curve."
+
+The lane is a rectangle with a width of 4 meters. The ball was launched perpendicular to the width, initially at 10 m/s, from the left edge of the lane. Kleper noticed that the irregularity was radially symmetric and had its center at the geometric center of the lane.
+
+Assume that initially the ball does not interact with this fictitious field (as if it came from infinity with the mentioned velocity). Use Newtonian theory (unless you are confident in general relativity), but remember that the actual gravitational deflection angle is twice that predicted by Newton.
+
+Assume everything is ideal: no air resistance, point masses, no sabotage by the Russians, among others.
+	\clearpage
+    
+    
+    \fi
+    
+    \ifsolution
+    
+    \section{The Mass of the Curve}
+	
+	Consider the following image as a representation of the situation:
+	
+	\begin{figure}[htpb]
+	    \centering
+	    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1.2,xscale=1.2]
+%uncomment if require: \path (0,542); %set diagram left start at 0, and has height of 542
+
+%Straight Lines [id:da22154698072500234] 
+\draw    (370,399.17) -- (370,58.17) ;
+\draw [shift={(370,56.17)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da10061356946999034] 
+\draw    (281.5,227.67) -- (456.5,227.67) ;
+\draw [shift={(458.5,227.67)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da46853866217963436] 
+\draw    (311,395.34) .. controls (310,226.17) and (308,170.17) .. (451,84.17) ;
+%Straight Lines [id:da40663434241717544] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (451,84.17) -- (257,204.17) ;
+%Straight Lines [id:da8695743460212075] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (311,390.17) -- (311,84.51) ;
+%Shape: Arc [id:dp045542910646536594] 
+\draw  [draw opacity=0] (310.65,140.68) .. controls (321.48,140.91) and (330.89,146.87) .. (335.98,155.66) -- (310,170.67) -- cycle ; \draw   (310.65,140.68) .. controls (321.48,140.91) and (330.89,146.87) .. (335.98,155.66) ;  
+%Straight Lines [id:da05218059566643363] 
+\draw    (314,99.17) -- (366.67,99.17) ;
+\draw [shift={(369.67,99.17)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+\draw [shift={(311,99.17)}, rotate = 0] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+%Shape: Circle [id:dp8299003684936876] 
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 208; green, 2; blue, 27 }  ,fill opacity=1 ] (304.33,395.34) .. controls (304.33,391.66) and (307.32,388.68) .. (311,388.68) .. controls (314.68,388.68) and (317.67,391.66) .. (317.67,395.34) .. controls (317.67,399.03) and (314.68,402.01) .. (311,402.01) .. controls (307.32,402.01) and (304.33,399.03) .. (304.33,395.34) -- cycle ;
+%Straight Lines [id:da7324498100904184] 
+\draw    (300,395.68) -- (300,303.17) ;
+\draw [shift={(300,301.17)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Circle [id:dp8249363069658819] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (331.33,194.34) .. controls (331.33,193.23) and (332.23,192.34) .. (333.33,192.34) .. controls (334.44,192.34) and (335.33,193.23) .. (335.33,194.34) .. controls (335.33,195.44) and (334.44,196.34) .. (333.33,196.34) .. controls (332.23,196.34) and (331.33,195.44) .. (331.33,194.34) -- cycle ;
+%Shape: Circle [id:dp4795714474997721] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (368,227.67) .. controls (368,226.57) and (368.9,225.67) .. (370,225.67) .. controls (371.1,225.67) and (372,226.57) .. (372,227.67) .. controls (372,228.78) and (371.1,229.67) .. (370,229.67) .. controls (368.9,229.67) and (368,228.78) .. (368,227.67) -- cycle ;
+
+% Text Node
+\draw (324.32,124.75) node [anchor=north west][inner sep=0.75pt]  [rotate=-0.08]  {$1^{\circ }$};
+% Text Node
+\draw (327.33,80.47) node [anchor=north west][inner sep=0.75pt]    {$2\ m$};
+% Text Node
+\draw (275.07,389.74) node [anchor=north west][inner sep=0.75pt]  [rotate=-270]  {$v\ =\ 10\ \text{m/s}$};
+% Text Node
+\draw (450.67,234.41) node [anchor=north west][inner sep=0.75pt]    {$x$};
+% Text Node
+\draw (378.67,45.41) node [anchor=north west][inner sep=0.75pt]    {$y$};
+% Text Node
+\draw (317,178.41) node [anchor=north west][inner sep=0.75pt]    {$P$};
+% Text Node
+\draw (370.67,209.47) node [anchor=north west][inner sep=0.75pt]    {$A$};
+
+
+\end{tikzpicture}
+	    \caption{Bowling Ball trajectory near the deformation}
+	    \label{fig:movball}
+	\end{figure}
+
+Assume that the initial velocity occurs without "gravitational" interference from the hole, so the mechanical energy of the object is $\dfrac{1}{2}mv_0^2$, which is the same as the total energy of the hyperbolic orbit $\dfrac{GMm}{2a}$. Therefore, we find that $a=\dfrac{GM}{v_0^2}$. From the velocity equation for a hyperbolic orbit, at the periapsis, we have:
+
+\[v_p=\sqrt{GM\left(\frac{2}{a(e-1)}+\frac{1}{a}\right)}\]
+
+By conservation of angular momentum:
+
+\[v_0r_0\sin{\alpha} = v_pr_p\]
+
+Note that $r_0 \sin{\alpha}$ is the distance AB multiplied by the sine of the angle between the velocity and AB, which is the opposite leg to that angle, that is: $r_0 \sin{\alpha}=2$ m. Substituting the expression for $v_p$ and knowing that $r_p = a(e-1)$:
+
+\[v_0r_0\sin{\alpha} = \sqrt{GMa(e^2-1)}=\sqrt{GM\frac{GM}{v_0^2}(e^2-1)}\]
+
+From this, we derive:
+
+\[M=\frac{v_0^2r_0\sin{\alpha}}{G\sqrt{e^2-1}}\]
+
+To determine the value of "$e$," we will study the deflection angle. This angle represents the angle between the asymptotes of the hyperbola. A known property of the hyperbola is that the tangent of the angle between the asymptote and the axis is equal to $\dfrac{b}{a}$ (where $b$ and $a$ are the semi-minor and semi-major axes, respectively):
+	
+	\begin{figure}[htpb]
+	    \centering
+	    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1.5,xscale=1.5]
+%uncomment if require: \path (0,542); %set diagram left start at 0, and has height of 542
+
+%Straight Lines [id:da22154698072500234] 
+\draw    (370,307.17) -- (370,58.17) ;
+\draw [shift={(370,56.17)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da10061356946999034] 
+\draw    (345,227.67) -- (624.5,227.67) ;
+\draw [shift={(626.5,227.67)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da46853866217963436] 
+\draw    (489,296.17) .. controls (424,228.17) and (446,176.17) .. (601,68.17) ;
+%Straight Lines [id:da40663434241717544] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (599,65.42) -- (370,227.67) ;
+%Shape: Circle [id:dp4795714474997721] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (368,227.67) .. controls (368,226.57) and (368.9,225.67) .. (370,225.67) .. controls (371.1,225.67) and (372,226.57) .. (372,227.67) .. controls (372,228.78) and (371.1,229.67) .. (370,229.67) .. controls (368.9,229.67) and (368,228.78) .. (368,227.67) -- cycle ;
+%Shape: Arc [id:dp07447676476369591] 
+\draw  [draw opacity=0] (394.01,209.68) .. controls (397.77,214.7) and (400,220.92) .. (400,227.67) .. controls (400,227.67) and (400,227.67) .. (400,227.67) -- (370,227.67) -- cycle ; \draw   (394.01,209.68) .. controls (397.77,214.7) and (400,220.92) .. (400,227.67) .. controls (400,227.67) and (400,227.67) .. (400,227.67) ;  
+%Shape: Circle [id:dp1818127898142372] 
+\draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (508.4,227.27) .. controls (508.4,226.17) and (509.3,225.27) .. (510.4,225.27) .. controls (511.5,225.27) and (512.4,226.17) .. (512.4,227.27) .. controls (512.4,228.38) and (511.5,229.27) .. (510.4,229.27) .. controls (509.3,229.27) and (508.4,228.38) .. (508.4,227.27) -- cycle ;
+%Straight Lines [id:da8590460173846288] 
+\draw    (372,227.67) -- (453,227.48) ;
+\draw [shift={(455,227.48)}, rotate = 179.87] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+\draw [shift={(370,227.67)}, rotate = 359.87] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+%Shape: Rectangle [id:dp38530193860188633] 
+\draw  [color={rgb, 255:red, 155; green, 155; blue, 155 }  ,draw opacity=1 ] (544.67,154.68) -- (633,154.68) -- (633,200.34) -- (544.67,200.34) -- cycle ;
+
+% Text Node
+\draw (598.17,232) node [anchor=north west][inner sep=0.75pt]    {$x$};
+% Text Node
+\draw (378.67,45.41) node [anchor=north west][inner sep=0.75pt]    {$y$};
+% Text Node
+\draw (351.17,206.97) node [anchor=north west][inner sep=0.75pt]    {$A$};
+% Text Node
+\draw (403.14,208.7) node [anchor=north west][inner sep=0.75pt]    {$\theta $};
+% Text Node
+\draw (512.4,223.87) node [anchor=south west] [inner sep=0.75pt]    {$F$};
+% Text Node
+\draw (412.5,230.97) node [anchor=north] [inner sep=0.75pt]    {$a$};
+% Text Node
+\draw (550,160) node [anchor=north west][inner sep=0.75pt]    {\Large $\tan( \theta ) =\dfrac{b}{a}$};
+
+
+\end{tikzpicture}
+	    \caption{Calculation of the angle of inclination of the upper asymptote of the hyperbola}
+	    \label{fig:hiper}
+	\end{figure}
+
+	In this case, the deflection is $\delta = 180^o - 2\theta$, so: $\theta = 89.5^o$. Recalling that $a^2 + b^2 = c^2$ (for the hyperbola) and that $e = \dfrac{c}{a}$, we have:
+
+\[e^2 - 1 = \frac{c^2 - a^2}{a^2} = \left(\frac{b}{a}\right)^2 = \tan^2{89.5^o}\]
+
+Therefore:
+
+\[M = \frac{v_0^2 r_0 \sin{\alpha}}{G} \cot{89.5^o}\]
+
+Substituting the values:
+	
+	\[M=2.617\cdot 10^{10}\text{kg}\]
+	
+	\clearpage
+    
+    
+    \fi
+\end{document}

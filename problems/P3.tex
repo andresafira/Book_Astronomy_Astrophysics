@@ -1,0 +1,87 @@
+\documentclass[../main]{subfiles}
+
+\questiontrue
+\solutiontrue
+
+\begin{document}
+\ifquestion
+
+\section{Chaotic Observation}
+
+Nill das Graças was obsessed with observing the Solar System. Once, he decided to observe the movement of a specific object that orbited the sun periodically without orbital interferences. He made several measurements, all done while the Earth was at its perihelion, in an attempt to describe this orbit. For this, he used his favorite unit of measurement: the Guanômetro (Gm). He organized all his measurements (which were very precise, by the way) into coordinate pairs centered on the Earth, i.e., Earth = (0,0). It is worth noting that he was lucky that the Earth's and the comet's orbits were coplanar and that the line crossing the Perihelion and Aphelion of the comet passed through Earth in such a way that the Sun was at the focus closest to the planet. The coordinates are specified in the following table:
+
+  \begin{table}[H]
+    \centering
+    \caption{Coordinates of points in the orbit of the misterious object}
+    \begin{tabular}{c c}
+        \toprule
+      $x$ & $y$ \\
+        \midrule
+      -10.89 & 10.30\\
+      29.84  & 5.01 \\
+      42.18  & 29.61\\
+      0.68   & 44.25\\
+      25.39  & 56.51\\
+        \bottomrule
+    \end{tabular}
+  \end{table}
+	
+Unfortunately, Nill was captured by Interpol for hacking the Hubble telescope to make these measurements and was executed by the government. You are the only one he trusted to deliver the measurements. However, unfortunately, he didn’t have time to explain what a Guanômetro is. But you promised that you would continue his work (in your words: "Never gonna give you up, never gonna let you down!"). So, find out:
+
+\ut{a} What is the value of a Guanômetro?
+
+\ut{b} The semi-major axis of the orbit.
+
+\ut{c} The eccentricity of the orbit.
+
+\ut{d} The orbital period.
+
+Hint: In GeoGebra, there is a function where selecting 5 points will provide the conic that contains these points.
+
+
+\clearpage
+  
+  
+\fi
+  
+\ifsolution
+
+
+\section{Chaotic Observation}
+
+First, we must construct the orbit. From there, we can find all the other important elements of the orbit following these steps:
+
+\begin{enumerate}
+    \item Draw the semi-major axis of the ellipse, finding point $G$, which is the farthest from the origin (this happens because Earth is located on the ellipse's axis).
+    \item Draw the perpendicular bisector of the major axis, find the center $K$ of the ellipse, and identify the minor axis of the ellipse.
+    \item Find the focal distance ($c$) knowing that $a^2 = b^2 + c^2$ and mark the position of the Sun (the Sun is at one of the foci, so it is a distance $c$ from the ellipse's center).
+    \item Calculate the distance between Earth and the Sun, knowing that this equals $1.471 \cdot 10^{11}$ m (the Earth's perihelion distance), calculate the semi-major axis of the orbit, and other relevant parameters.
+\end{enumerate}
+
+After this, we will have something like:
+
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[scale = 0.9]{images/contu.PNG}
+    \caption{Conic associated with the 5 points provided by the statement. Conic generated using the free software GeoGebra}
+    \label{fig:geogebra}
+\end{figure}
+
+Given that $HG$ is the major axis ($2a = 68.06721$ Gm) and $IJ$ is the minor axis ($2b = 47.17954$ Gm). The distance from $K$ to the Sun is the parameter $c$ of the ellipse, which can be calculated as $c = \sqrt{a^2 - b^2} = 24.53180$ Gm.
+
+\ut{a} In the diagram, the distance from Earth to the Sun is $5.05501$ Gm, which corresponds to $1.471 \cdot 10^{11}$ m. Therefore: $1$ Gm $= 2.91 \cdot 10^{10}$ m $= 0.1945$ AU.
+
+\ut{b} Just convert from Guanômetro to meters: $a = 9.9 \cdot 10^{11}$ m $= 6.619$ AU.
+
+\ut{c} The eccentricity of the orbit is simply: $e = \dfrac{c}{a}$, which is independent of the unit of measure: 
+$$e = \dfrac{24.53180}{68.06721/2} = 0.72$$
+
+\ut{d} By Kepler's third law for the solar system:
+$$P_{\text{years}} = (a_{\text{AU}})^{\frac{3}{2}}$$
+$$P = 17 \text{ years}$$
+	
+	\clearpage
+    
+    
+    \fi
+\end{document}

@@ -1,0 +1,175 @@
+\documentclass[../main]{subfiles}
+
+\questiontrue
+\solutiontrue
+
+\begin{document}
+  \ifquestion
+
+  \section{M666}
+
+
+The great astronomer José Lagranja discovered the star cluster M666.
+
+\parte{A}{Photometry}
+
+\ut{A.1} The apparent magnitude of the i-th star is $m_i$. Show that the apparent magnitude of the cluster is determined as:
+$$M=-\frac{5}{2} \log \left(\sum 10^{-\frac{2}{5}m_i}\right)$$
+
+\ut{A.2} Lagranja's assistant, Frederico no Grauss, noticed that the apparent stellar magnitudes are in an arithmetic progression, starting from star 1 ($m_1=m$), with a common difference $\Delta m > 0$. Knowing that the number of stars is very large (practically infinite), show that:
+$$M=m+\frac{5}{2}\log\left(1-10^{-\frac{2}{5}\Delta m}\right)$$
+
+\ut{A.3} Show that for $\Delta m \ll 1$:
+$$M \approx m+\frac{5}{2}\log\left(\frac{2}{5}\ln(10)\Delta m\right) $$ 
+
+\ut{A.4} Show that for $\Delta m \gg 1$:
+$$M \approx m-\frac{5}{2\ln(10)}10^{-\frac{2}{5}\Delta m}$$
+
+Hint: Use Taylor approximations for the appropriate ranges:
+$$10^{x} \approx 1+\ln{(10)} x$$
+$$\ln{(1+x)} \approx x$$
+
+\parte{B}{Physical Analysis}
+
+Sapphire, a young astronomer, was greatly excited by the discovery of the new cluster and set out to find more information about the object. With her detection tools, she managed to find the frequency $H_\alpha$ of each component of the cluster, denoted as ${f_1, f_2, ..., f_i, ..., f_n}$. Knowing that the velocities of the stellar components were non-relativistic, answer the following:
+
+\ut{B.1} Find the recession velocity of the cluster $v_{cl}$ knowing that the rest frequency of the $H_\alpha$ line is $f_0$.
+
+It is known that the cluster is spherical and isotropic in terms of velocity distribution and homogeneous in matter distribution.
+
+\ut{B.2} Considering that all component stars have equal masses, find the total kinetic energy of the cluster with respect to its center of mass.
+
+\ut{B.3} Using the Virial theorem, find the mass of the cluster, knowing that its radius is $R$.
+
+\clearpage
+
+\fi
+
+\ifsolution
+
+\section{M666}
+
+\parte{A}{Photometry}
+
+\ut{A.1} Writing Pogson's equation for an individual star:
+
+$$m_i=-2.5\log{\frac{F_i}{F_v}}$$
+
+Rearranging to obtain the value of $F_i$ (flux):
+
+$$F_i=F_v 10^{-\frac{m_i}{2.5}}$$
+
+Note that the flux of the cluster is simply the sum of the flux of all stars (since the distance to Earth is approximately the same, the flux is proportional to the intrinsic luminosity), thus the total flux $F_t=\sum F_i$, and the equivalent magnitude is:
+
+$$M=-2.5\log{\left(\frac{\sum F_i}{F_v}\right)}$$
+
+$$M=-2.5\log{\left(\frac{F_v\sum 10^{-\frac{m_i}{2.5}}}{F_v}\right)}$$
+
+$$\therefore M=-\frac{5}{2}\log{\left(\sum 10^{-\frac{2m_i}{5}}\right)}$$
+
+\ut{A.2} If the apparent magnitudes are in an arithmetic progression, it means: $m_{i+1}=m_i+\Delta m$, where $\Delta m$ is the common difference of this progression. Thus, the sum $\sum 10^{-\frac{2m_i}{5}}$ can be written as:
+
+$$10^{-\frac{2m_1}{5}}+10^{-\frac{2m_2}{5}}+10^{-\frac{2m_3}{5}}+...=10^{-\frac{2m_1}{5}}+10^{-\frac{2(m_1+\Delta m)}{5}}+10^{-\frac{2(m_1+2\Delta m)}{5}}+...$$
+
+Assuming a large number of stars, we can approximate as follows:
+
+$$\sum 10^{-\frac{2m_i}{5}}=10^{-\frac{2m_1}{5}}+10^{-\frac{2m_1}{5}-\frac{2\Delta m}{5}}+10^{-\frac{2m_1}{5}-\frac{4\Delta m}{5}}+...$$
+
+Notice that this is the sum of an infinite geometric series (since $\Delta m > 0$, $10^{-\frac{2 \Delta m}{5}} < 1$, so the sum converges). Therefore:
+
+$$\sum 10^{-\frac{2m_i}{5}}=\frac{10^{-\frac{2m_1}{5}}}{1-10^{-\frac{2 \Delta m}{5}}}=10^{-\frac{2m_1}{5}} \cdot \left(1-10^{-\frac{2 \Delta m}{5}}\right)^{-1}$$
+
+Applying it in Pogson's equation:
+
+$$M=-\frac{5}{2}\log{\left(10^{-\frac{2m_1}{5}} \cdot \left(1-10^{-\frac{2 \Delta m}{5}}\right)^{-1}\right)}$$
+
+$$M=-\frac{5}{2}\log{\left(10^{-\frac{2m_1}{5}}\right)} -\frac{5}{2}\log{\left(1-10^{-\frac{2 \Delta m}{5}}\right)^{-1}}$$
+
+Finalizing:
+
+$$M=m_1 +\frac{5}{2}\log{\left(1-10^{-\frac{2 \Delta m}{5}}\right)}$$
+
+\ut{A.3}
+
+If $\Delta m \ll 1$: $10^{\frac{-2\Delta m}{5}} \approx 1$ (with $10^{\frac{-2\Delta m}{5}} < 1$), so $1-10^{\frac{-2\Delta m}{5}} \approx 0 $.
+
+Using the approximation $\ln(1+\alpha x) \approx \alpha x$, for $\alpha x \ll 1$ (in this case $10^{\frac{-2\Delta m}{5}}-1=\alpha x$:
+
+$$\therefore \ln{\left(1+10^{\frac{-2\Delta m}{5}}-1\right)} \approx 10^{-\frac{2 \Delta m}{5}}-1 \approx \ln{\left(10^{\frac{-2\Delta m}{5}}\right)}$$
+
+Changing the base: $10=e^{\ln{10}}$, we get:
+
+$$10^{-\frac{2 \Delta m}{5}}-1 \approx \ln{\left(10^{\frac{-2\Delta m}{5}}\right)} = -\frac{2\Delta m}{5}\ln{10}$$
+
+To find $1-10^{-\frac{2 \Delta m}{5}}$:
+
+$$1-10^{-\frac{2 \Delta m}{5}}= \frac{2\Delta m}{5}\ln{10}$$
+
+Finalizing:
+
+$$M=m_1 +\frac{5}{2}\log{\left(\frac{2\Delta m}{5}\ln{10}\right)}$$
+
+\ut{A.4} For $\Delta m \gg 1$: $10^{\frac{-2\Delta m}{5}} \approx 0$, so:
+
+$$1-10^{\frac{-2\Delta m}{5}} = 1+\left(-10^{\frac{-2\Delta m}{5}} \ln{10}\right) \cdot \frac{1}{\ln{10}}$$
+
+As $-10^{\frac{-2\Delta m}{5}} \cdot \ln{10} \approx 0$, we can approximate: $1+\left(-10^{\frac{-2\Delta m}{5}} \ln{10}\right) \cdot \frac{1}{\ln{10}}=10^{\frac{-10^{\frac{-2\Delta m}{5}}}{\ln{10}}}$.
+
+$$\therefore \log{10^{\frac{-10^{\frac{-2\Delta m}{5}}}{\ln{10}}}} = \frac{-10^{\frac{-2\Delta m}{5}}}{\ln{10}}$$
+
+Finalizing:
+
+$$M=m_1-\frac{5}{2}\frac{10^{\frac{-2\Delta m}{5}}}{\ln{10}}$$
+
+\parte{B}{Physical Analysis}
+
+\ut{B.1}
+
+For non-relativistic velocities, we can use the Doppler effect to find the redshift of the H$\alpha$ frequency:
+
+$$f=f_0 \left(1-\frac{v}{c}\right)$$
+
+Solving for velocity $v$, in relation to the cluster:
+
+$$v=c\left(1-\frac{f}{f_0}\right)$$
+
+For a large number of stars, we assume the average of the stars is:
+
+$$v_{cl}=c\left(1-\frac{\sum f_i}{f_0 n}\right)$$
+
+In which $n$ is the total number of stars.
+
+\ut{B.2}
+
+As the object is in recession and it is homogeneous (with stars equally distributed) and isotropic (velocity vectors equally distributed among stars), the system's internal kinetic energy is given by:
+
+$$E=\frac{1}{2} \sum m_iv_i^2$$
+
+Given that each $m_i$ and $v_i$ is equal:
+
+$$E=\frac{1}{2}n mv^2$$
+
+\ut{B.3}
+
+The Virial theorem states that for a bound system in equilibrium:
+
+$$2U+E_p=0$$
+
+Where $U$ is the internal kinetic energy, and $E_p$ is the internal potential energy. Since $U=\frac{1}{2}E_p$:
+
+$$U=\frac{1}{2}E_p=\frac{1}{2}\frac{-GM^2}{R}$$
+
+Where $G$ is the gravitational constant and $R$ is the radius of the cluster. Rewriting:
+
+$$U=\frac{1}{2}\frac{-GM^2}{R}$$
+
+$$\therefore M=\frac{UR}{G}$$
+
+Rewriting to account for internal kinetic energy $U$:
+
+$$M=\frac{3n mv^2 R}{G}$$
+
+\clearpage
+
+\fi
+\end{document}

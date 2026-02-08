@@ -1,0 +1,299 @@
+\documentclass[../main]{subfiles}
+
+\questiontrue
+\solutiontrue
+
+\begin{document}
+    \ifquestion
+    
+	\section{Intergalactic Spectroscopy}
+
+The proportion of baryonic matter determined the composition of matter in the universe! In the early universe, the concentration of baryonic matter was responsible for governing the formation of deuterium and helium in the short time interval when the universe was cold enough for stable nuclei to form and hot enough for nuclear fusion to occur. This matter composition has remained unchanged since the universe cooled, 20 minutes after its beginning, and we can currently use it to infer the proportion of baryonic matter relative to other cosmological components, such as dark matter and dark energy. 
+
+Until recently, computational simulations suggested that there should be a proportion of $5\%$ of baryonic matter in the universe; however, only $2.5\%$ was known, part of it found in galaxies, stars, intergalactic gases, among others. Where were the remaining $2.5\%$?! Fortunately, a recent phenomenon in the distant universe emitted radiation under conditions such that “invisible” particles could absorb this radiation in the $WHIM$ (Warm-Hot Intergalactic Medium). Using a technique known as the Lyman-Alpha Forest, high-frequency radiation underwent a redshift capable of allowing it to interact with particles in the $WHIM$, leaving absorption features in the spectrum. From these features, we were able to determine the remaining matter composition in these invisible regions of the universe.
+
+Consider the mysterious light source emitting radiation at a temperature $T$ as an ideal blackbody and at an initial distance (when the radiation was emitted) of $D_e = 2469.03 \text{ } Mpc$. Denote the current time as $t_0 = 14.571$ billion years and the universal scale factor at the time of emission as $a_e$ (denote $a_0 = 1$ for the current scale factor). It is known that for absorption to occur in the $WHIM$, the wavelength\footnote{Also known as the Lyman-Alpha wavelength, which is the wavelength predominantly absorbed in the Lyman-Alpha Forest.} must lie between $\lambda_H$ and $\lambda_H + \Delta \lambda_H$. The particle density in the $WHIM$ was $\rho_e$ at the time of emission, and the medium’s opacity is constant and equal to $\kappa$.
+
+Cosmological studies show that the expansion of the universe is practically exponential, following the Hubble relation: $a = a_0 e^{H_0(t-t_0)}$, with $H_0$ being the Hubble constant.
+
+\ut{a} Find the emission time $t_e$ of the radiation.
+
+\ut{b} Find a relation between the redshift of the radiation and the scale factor of the universe at the moment.
+
+\ut{c} Find a relation between the matter density of the particles in the $WHIM$ as a function of the scale factor.
+
+\ut{d} Consider the portion of radiation with initial wavelength\footnote{Consider $\lambda < \lambda_H$.} equal to $\lambda$. Find the scale factor at which this portion starts to undergo absorption, and also the scale factor at which this portion finishes being absorbed.
+
+\ut{e} Considering that the flux of this portion before absorption was $F_0$, find the flux after the full absorption in the $WHIM$. Neglect other factors that could alter the flux. It is known that $\Delta \lambda_H \ll \lambda_H$.
+
+An astronomer on Earth, upon receiving the spectrum of the body, notices that an interval of wavelengths does not obey Planck’s law in the flux distribution. The astronomer then related the obtained flux to the expected flux by correcting the problematic interval with a correction factor $\alpha(\lambda) = \dfrac{F_{obtained}}{F_{expected}}$.
+
+\ut{f} Find $\alpha(\lambda)$.
+
+\ut{g} What is the observed wavelength interval in which this effect can be observed? Are there subintervals where the effect occurs partially? Determine them.
+
+\ut{h} The astronomer collected the following data:
+
+\begin{table}[htpb]
+    \centering
+    \caption{Collected parameter data}
+    \begin{tabular}{c c} 
+        \toprule
+        Quantity & Value \\
+        \midrule
+        $\kappa$ & $5.3 \cdot 10^{-2}\ \unit{\meter \squared \per \kilo \gram}$\\
+        $\Delta \lambda_H$ & $1.7\ \unit{\nano \meter}$\\
+        $\lambda_H$ & $121.6\ \unit{\nano \meter}$\\
+        $H_0$ & $67.15\ \unit{\kilo \meter \per \second \per \mega \parsec}$  \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:param1}
+\end{table}
+
+He also created the following table relating the correction factor to the observed wavelength:
+
+\begin{table}[htpb]
+    \centering
+    \caption{Results of $\alpha$ as a function of wavelength $\lambda$}
+    \begin{tabular}{c c} 
+        \toprule
+        $\lambda\ (\pm 1.4\ \unit{\nano \meter})$ & $\alpha(\lambda)$ \\
+        \midrule
+        $130.0$  &  $0.99964$\\
+        $160.0$ &  $0.99933$\\
+        $190.0$  &  $0.99887$\\
+        $220.0$  &  $0.99825$\\
+        $250.0$ &  $0.99744$\\
+        \bottomrule
+    \end{tabular}
+    \label{tab:param2}
+\end{table}
+
+Rewrite the previous table by adding the proper uncertainties in the correction factor.
+
+\ut{i} Use the linear regression method, performing the necessary substitutions and algebraic manipulations, to determine the density of the $WHIM$ at the emission time, as well as its corresponding measurement uncertainty.
+
+\clearpage
+
+\fi
+
+\ifsolution
+
+\section{Intergalactic Spectroscopy}
+
+\ut{a} Consider the moment when the light is at a distance* $r$ from the source (*this distance corresponds to the comoving distance, i.e., the distance from the point where it is now to the source if measured at the time of emission). Over an interval $dt$, the distance traveled will be: $cdt = \frac{a(t)}{a_e} dr = e^{H_0(t-t_e)} dr$. Therefore, we find:
+
+$$\frac{dt}{e^{H_0(t-t_e)}} = \frac{dr}{c} \rightarrow \int_{t_e}^{t_0} e^{-H_0(t-t_e)} dt = \frac{D_e}{c}$$
+
+Thus:
+
+$$e^{-H_0(t_0 - t_e)} - 1 = -\frac{D_e H_0}{c}$$
+
+$$t_e = t_0 + \frac{\ln{\left(1 - \frac{D_e H_0}{c}\right)}}{H_0}$$
+
+Substituting the values, we find $t_e = 2.674$ billion years! Therefore, we deduce $a_e = 0.442$.
+
+\ut{b} By the definition of redshift: $z = \frac{\lambda - \lambda_e}{\lambda_e}$, however, $\lambda$ is nothing but $\lambda_e$ scaled by a factor $\frac{a(t)}{a_e}$:
+
+$$z = \frac{\lambda_e \frac{a(t)}{a_e}}{\lambda_e} - 1 = \frac{a(t)}{a_e} - 1$$
+
+Thus:
+
+$$a(t) = a_e (z+1)$$
+
+\ut{c} Let the initial density be $\rho_e$. After the universe expands, the volume increases by a factor of $a(t)^3$, so, being inversely proportional to the volume, the density behaves as:
+
+$$\rho(t) = \frac{\rho_e a_e^3}{a(t)^3}$$
+
+\ut{d} For a wavelength to start being absorbed, it must redshift such that it equals $\lambda_H$. The end of absorption occurs when the wavelength after redshift equals $\lambda_H + \Delta \lambda_H$.
+
+At the starting condition:
+
+$$\lambda_H = \lambda \frac{a(t_1)}{a_e}$$
+
+$$a(t_1) = a_e \frac{\lambda_H}{\lambda}$$
+
+At the ending condition:
+
+$$\lambda_H + \Delta \lambda_H = \lambda \frac{a(t_2)}{a_e}$$
+
+$$a(t_2) = a_e \frac{\lambda_H + \Delta \lambda_H}{\lambda}$$
+
+\ut{e} Knowing that the optical depth in this situation is given by $\tau = \kappa \rho(t) dR$, with $dR$ being the distance traveled, which can also be interpreted as $dR = c dt$. There is also the effect of wavelength change, since the flux is proportional to photon energy; when the photon wavelength changes, so does the energy, and therefore the flux, meaning the flux is multiplied by a factor $\frac{a(t_2)}{a(t_1)}$ over the interval $t_2 - t_1$.
+
+Analyzing a small interval $dt$, consider first the absorption effect. This can be done because the effects are independent: one changes the number of photons (absorption) and the other changes the photon wavelength (expansion). Thus we can analyze them separately:
+
+$$dF = -F(t) \tau = -F(t) \kappa c \rho_e a_e^3 a(t)^{-3} dt$$
+
+Integrating:
+
+$$\int_{F_0}^{F} \frac{dF}{F} = -\int_{t_1}^{t_2} \kappa c \rho_e a_e^3 e^{-3 H_0 (t-t_0)} dt$$
+
+$$\ln{\left(\frac{F}{F_0}\right)} = \kappa c \rho_e a_e^3 \left(e^{-3 H_0 (t_2-t_0)} - e^{-3 H_0 (t_1-t_0)}\right) \frac{1}{3 H_0}$$
+
+$$\ln{\left(\frac{F}{F_0}\right)} = \kappa c \rho_e a_e^3 \left(a(t_2)^{-3} - a(t_1)^{-3}\right) \frac{1}{3 H_0}$$
+
+$$\ln{\left(\frac{F}{F_0}\right)} = \kappa c \rho_e \lambda^3 \left((\lambda_H + \Delta \lambda_H)^{-3} - \lambda_H^{-3}\right) \frac{1}{3 H_0}$$
+
+Using the approximation $(1+x)^n \approx 1 + n x$, since $\Delta \lambda_H \ll \lambda_H$:
+
+$$\ln{\left(\frac{F}{F_0}\right)} = -\frac{\kappa c \rho_e \lambda^3 \Delta \lambda_H}{H_0 \lambda_H^4}$$
+
+$$F = F_0 e^{-\frac{\kappa c \rho_e \lambda^3 \Delta \lambda_H}{H_0 \lambda_H^4}}$$
+
+Finally, including the factor $\frac{a_e}{a_0}$:
+
+$$F = 0.442 \cdot F_0 e^{-\frac{\kappa c \rho_e \lambda^3 \Delta \lambda_H}{H_0 \lambda_H^4}}$$
+
+\ut{f} The expected flux, ignoring $WHIM$ absorption, would only consider the universe expansion factor:
+
+$$F_{expected} = 0.442 F_0$$
+
+Remember that all other factors affecting the flux (distance effect and redshift) are independent of the initial flux. Therefore, the correction factor is constant after the absorption interval, giving:
+
+$$\alpha(\lambda) = e^{-\frac{\kappa c \rho_e \lambda^3 \Delta \lambda_H}{H_0 \lambda_H^4}}$$
+
+\ut{g} The expansion of the universe causes the redshift of radiation, i.e., an increase in wavelength. Absorption occurs only if $\lambda_H < \lambda < \lambda_H + \Delta \lambda_H$. If the initial $\lambda$ is greater than $\lambda_H + \Delta \lambda_H$, no effect occurs due to redshift. This initial wavelength corresponds to the observed wavelength:
+
+$$\lambda_{observed} = \lambda_{emitted} \frac{a_0}{a_e} = (\lambda_H + \Delta \lambda_H) \frac{1}{a_e}$$
+
+Substituting values, we find:
+
+$$\lambda_{max} = 278.6 \text{ nm}$$
+
+For smaller wavelengths, redshift has not had enough time to bring the initial wavelength to at least $\lambda_H$. Therefore, at the minimum, these wavelengths enter the necessary range just before reaching Earth:
+
+$$\lambda_{min} = \lambda_H$$
+
+So the interval where the anomaly occurs is:
+
+$$[121.6 \text{ nm}, 278.6 \text{ nm}]$$
+
+However, for initial wavelengths $\lambda_H < \lambda_0 < \lambda_H + \Delta \lambda_H$, absorption occurs partially in the $WHIM$. For observed wavelengths:
+
+$$\frac{\lambda_H}{a_e} < \lambda < \frac{\lambda_H + \Delta \lambda_H}{a_e}$$
+
+the effect is only partial:
+
+$$274.8 \text{ nm} < \lambda < 278.6 \text{ nm}$$
+
+Similarly, for radiation arriving at Earth with wavelength $\lambda_H < \lambda < \lambda_H + \Delta \lambda_H$, only part of the interval is traversed:
+
+$$121.6 \text{ nm} < \lambda < 123.3 \text{ nm}$$
+
+\ut{h} We use the standard error propagation equation for a function $f(x,y,z,...): \RR \to \RR$:
+
+$$\Delta f = \sqrt{\left(\frac{\partial f}{\partial x}\right)^2 (\Delta x)^2 + \left(\frac{\partial f}{\partial y}\right)^2 (\Delta y)^2 + \left(\frac{\partial f}{\partial z}\right)^2 (\Delta z)^2 + ...}$$
+
+Here, the function is $\alpha(\lambda)$:
+
+$$\Delta \alpha(\lambda) = \left|\frac{d\alpha(\lambda)}{d\lambda} \Delta \lambda \right|$$
+
+Be careful! The wavelengths in the table are observed wavelengths, different from the $\lambda$ used for uncertainty calculations. Convert each provided wavelength by multiplying by $a_e$:
+
+\begin{center}
+\begin{tabular}{||c | c||} 
+\hline
+$\lambda_{obs.} (nm) \pm 1.4$ nm & $\lambda_{emit.} (nm) \pm 0.6$ nm \\
+\hline
+130.0 & 57.5\\
+160.0 & 70.8\\
+190.0 & 84.1\\
+220.0 & 97.3\\
+250.0 & 110.6\\
+\hline
+\end{tabular}
+\end{center}
+
+Since $\alpha(\lambda) = e^{-k \lambda^3}$:
+
+$$\Delta \alpha(\lambda) = 3 k \lambda^2 e^{-k \lambda^3} \Delta \lambda$$
+
+Given\footnote{After redshift correction} $\Delta \lambda = 0.26 \text{ nm } \forall \lambda$. Since $k$ is unknown (because $\rho_e$ is unknown), use $\ln(\alpha(\lambda)) = -k \lambda^3$, giving:
+
+$$\Delta \alpha(\lambda) = -3 \ln(\alpha(\lambda)) \alpha(\lambda) \frac{\Delta \lambda}{\lambda}$$
+
+Substitute values to construct the complete table:
+
+\begin{center}
+\begin{tabular}{||c | c||} 
+\hline
+$\lambda (nm) \pm 1.4$ nm & $\alpha(\lambda)$ \\
+\hline
+130.0 & 0.99964 $\pm$ 0.00001\\
+160.0 & 0.99933 $\pm$ 0.00002\\
+190.0 & 0.99887 $\pm$ 0.00002\\
+220.0 & 0.99825 $\pm$ 0.00003\\
+250.0 & 0.99744 $\pm$ 0.00004\\
+\hline
+\end{tabular}
+\end{center}
+
+\ut{i} To use linear regression, we need a linear function. How can we linearly relate $\alpha(\lambda)$ and $\lambda$? From the previous item: $\ln(\alpha(\lambda)) \propto \lambda^3$. Thus, a plot of $\ln(\alpha(\lambda))$ vs $\lambda^3$ yields a straight line.
+
+Use emitted wavelengths:
+
+\begin{center}
+\begin{tabular}{||c | c||} 
+\hline
+$\lambda (nm) \pm 0.6$ nm & $\alpha(\lambda)$ \\
+\hline
+57.5 & 0.99964 $\pm$ 0.00001\\
+70.8 & 0.99933 $\pm$ 0.00002\\
+84.1 & 0.99887 $\pm$ 0.00002\\
+97.3 & 0.99825 $\pm$ 0.00003\\
+110.6 & 0.99744 $\pm$ 0.00004\\
+\hline
+\end{tabular}
+\end{center}
+
+Construct the table for linear regression (optional):
+
+\begin{center}
+\begin{tabular}{||c | c||} 
+\hline
+$\lambda^3 (nm^3)$ & $\ln(\alpha(\lambda))$ \\
+\hline
+190109.4 & -3.6006 $\cdot 10^{-4}$\\
+354894.9 & -6.7022 $\cdot 10^{-4}$\\
+594823.3 & -11.3064 $\cdot 10^{-4}$\\
+921167.3 & -17.5153 $\cdot 10^{-4}$\\
+1352899.0 & -25.6328 $\cdot 10^{-4}$\\
+\hline
+\end{tabular}
+\end{center}
+
+After performing linear regression $y = A + B x$, we find:
+
+$$\begin{cases}
+A = 2.28314097 \cdot 10^{-8} \\
+B = -1.896911019 \cdot 10^{-9} \text{ nm}^{-3} \\
+r = -0.999993384
+\end{cases}$$
+
+Errors are calculated using (with $N=5$ samples):
+
+$$\Delta B = B \sqrt{\frac{r^{-2} - 1}{N-2}}$$
+
+$$\Delta A = \Delta B \sqrt{\frac{\sum_{i=1}^N x_i^2}{N}}$$
+
+Finally:
+
+$$A = (0.02 \pm 3.18) \cdot 10^{-6}$$
+
+$$B = (-1.897 \pm 0.004) \cdot 10^{-9} \text{ nm}^{-3}$$
+
+The uncertainty in $A$ is larger than its value, implying $A$ cannot be determined and can be neglected (expected to be $0$ in the ideal case).
+
+Note:
+
+$$B = -\frac{\kappa c \rho_e \Delta \lambda_H}{H_0 \lambda_H^4}$$
+
+Using wavelengths in $nm$ as previously. Thus we find:
+
+	$$\rho_e = (3.341 \pm 0.007) \cdot 10^{-26} \text{ } kg \cdot m^{-3}$$
+	
+	\clearpage
+    
+    \fi
+\end{document}
